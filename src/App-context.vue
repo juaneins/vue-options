@@ -4,15 +4,11 @@
 
 <script>
 import HomeComponent from '@/components/HomeComponent.vue'
-import { provide } from 'vue'
 
 export default {
   name: 'App',
   components: {
     HomeComponent
-  },
-  setup() {
-    provide('username', 'juaneins')
   }
 }
 </script>
