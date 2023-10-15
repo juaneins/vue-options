@@ -4,40 +4,31 @@
   <button ref="btn">Click!</button>
 </template>
 
-<script>
+<script setup>
 import { ref, toRefs, computed, inject, watch } from 'vue';
 
-export default {
-  props: {
-    firstName: String,
-    lastName: String,
-  },
-  setup(props, { expose }) {
-    const { firstName, lastName } = toRefs(props);
+const props = defineProps({
+  firstName: String,
+  lastName: String,
+});
 
-    const fullName = computed(() => {
-      return `${firstName.value} ${lastName.value}`;
-    });
-    // se inyecta para que pueda ser usado por otros componentes
-    const username = inject('username');
+const { firstName, lastName } = toRefs(props);
 
-    expose({
-      fullName,
-    });
+const fullName = computed(() => {
+  return `${firstName.value} ${lastName.value}`;
+});
+// se inyecta para que pueda ser usado por otros componentes
+const username = inject('username');
 
-    const btn = ref(null);
+defineExpose({
+  fullName,
+});
 
-    console.log(btn.value);
+const btn = ref(null);
 
-    watch(btn, (valor) => {
-      console.log('btn valor: ', valor);
-    });
+console.log(btn.value);
 
-    return {
-      fullName,
-      username,
-      btn,
-    };
-  },
-};
+watch(btn, (valor) => {
+  console.log('btn valor: ', valor);
+});
 </script>
