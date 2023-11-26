@@ -1,10 +1,10 @@
 <script setup>
-import HomeComponentComposition from '@/components/HomeComponentComposition.vue';
+import HomeComponentComputed from '@/components/HomeComponentComputed.vue';
 
 
 </script>
 <template>
-  <HomeComponentComposition></HomeComponentComposition>
+  <HomeComponentComputed first-name="Pedro" last-name="Rodriguez"></HomeComponentComputed>
 </template>
 
 
