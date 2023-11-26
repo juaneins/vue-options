@@ -1,21 +1,24 @@
-<script setup>
+<script>
 import { toRefs, computed } from "vue";
 
-const props = defineProps({
-    firstName: String,
-    lastName: String
-});
+export default {
+    props: {
+        firstName: String,
+        lastName: String
+    },
+    setup(props, context) {
+        console.log("context:", context);
+        const { firstName, lastName } = toRefs(props);
 
+        const fullName = computed(() => {
+            return `${firstName.value} ${lastName.value}`;
+        });
 
-const { firstName, lastName } = toRefs(props);
-
-
-
-const fullName = computed(() => {
-    return `${firstName.value} ${lastName.value}`;
-})
-
-
+        return {
+            fullName
+        };
+    }
+};
 </script>
 <template>
     <p>{{ firstName }}</p>

@@ -1,10 +1,10 @@
 <script setup>
-import HomeComponentComputed from '@/components/HomeComponentComputed.vue';
+import HomeComponentProps from '@/components/HomeComponentProps.vue';
 
 
 </script>
 <template>
-  <HomeComponentComputed first-name="Pedro" last-name="Rodriguez"></HomeComponentComputed>
+  <HomeComponentProps first-name="Pedro" last-name="Rodriguez" otro="otroValor"></HomeComponentProps>
 </template>
 
 
