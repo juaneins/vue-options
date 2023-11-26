@@ -18,6 +18,7 @@ defineExpose({
   fullName,
 });
 
+// cuando queremos un valor html a ref lo inicializamos con null
 const btn = ref(null);
 
 console.log(btn.value);
