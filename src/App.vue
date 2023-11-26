@@ -1,20 +1,23 @@
 <template>
   <HomeComponent first-name="Miguel" last-name="Torres" otro="algo"></HomeComponent>
+  <p>{{ texto }}</p>
 </template>
 
 <script>
-import HomeComponent from '@/components/HomeComponent.vue'
-import { provide } from 'vue'
+import HomeComponent from '@/components/HomeComponent.vue';
+import base from '@/mixins/base.js';
+import { provide } from 'vue';
 
 export default {
   name: 'App',
+  mixins: [base],
   components: {
-    HomeComponent
+    HomeComponent,
   },
   setup() {
-    provide('username', 'juaneins')
-  }
-}
+    provide('username', 'juaneins');
+  },
+};
 </script>
 
 <style>
