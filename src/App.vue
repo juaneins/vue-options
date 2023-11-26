@@ -1,10 +1,12 @@
 <script setup>
-import HomeComponentProps from '@/components/HomeComponentProps.vue';
+import HomeComponentInject from '@/components/HomeComponentInject.vue';
+import { provide } from "vue";
 
+provide("username", "skynet")
 
 </script>
 <template>
-  <HomeComponentProps first-name="Pedro" last-name="Rodriguez" otro="otroValor"></HomeComponentProps>
+  <HomeComponentInject first-name="Pedro" last-name="Rodriguez" otro="otroValor"></HomeComponentInject>
 </template>
 
 
